@@ -10,6 +10,13 @@
 #include <ngx_md5.h>
 #include <ngx_sha1.h>
 
+#ifndef MD5_DIGEST_LENGTH
+#include <openssl/md5.h>
+#endif
+#ifndef SHA_DIGEST_LENGTH
+#include <openssl/sha.h>
+#endif
+
 #include "ngx_http_sticky_misc.h"
 
 #ifndef ngx_str_set
